@@ -1,185 +1,268 @@
-# 📧 Email Classifier App
+<div align="center">
 
-An intelligent Gmail email classification system powered by AI that automatically categorizes your emails into meaningful groups using OpenAI GPT-4o or Google Gemini 2.0 Flash.
+# 📧✨ Email Classifier App
+
+### Intelligent Gmail Classification powered by AI
+
+*Automatically categorize your emails using OpenAI GPT-4o or Google Gemini 2.0 Flash*
+
+[![Next.js](https://img.shields.io/badge/Next.js-15+-black?style=for-the-badge&logo=next.js)](https://nextjs.org/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.0+-blue?style=for-the-badge&logo=typescript)](https://www.typescriptlang.org/)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind-3.0+-38B2AC?style=for-the-badge&logo=tailwind-css)](https://tailwindcss.com/)
+[![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)](LICENSE)
 
 ![Email Classifier Dashboard](Screenshot%202025-10-28%20124543.png)
 
+[Features](#-features) • [Screenshots](#-screenshots) • [Quick Start](#-quick-start) • [Documentation](#-tech-stack)
+
+</div>
+
+---
+
 ## ✨ Features
 
-- 🤖 **Dual AI Provider Support**: Choose between OpenAI GPT-4o or Google Gemini 2.0 Flash for email classification
-- 📊 **Smart Categorization**: Automatically classifies emails into 6 categories:
-  - 🔴 Urgent & Important
-  - 🟡 Important but Not Urgent
-  - 🔵 Informational
-  - 🟢 Promotional
-  - ⚪ General
-  - 🗑️ Spam/Junk
-- 🔐 **Secure OAuth Authentication**: Gmail integration via Google OAuth 2.0
-- 📱 **Responsive UI**: Clean, modern interface built with Tailwind CSS
-- 📧 **Full Email View**: Click any email to view complete content with HTML rendering
-- 💾 **Local Storage**: Classified emails are cached locally for quick access
-- 🔄 **Real-time Classification**: Fetch and classify emails on demand
+<table>
+<tr>
+<td width="50%">
 
-## 🖼️ Screenshots
+### 🤖 **Dual AI Power**
+Choose between OpenAI GPT-4o or Google Gemini 2.0 Flash for intelligent email classification
 
-### Dashboard View
-![Dashboard with categorized emails](Screenshot%202025-10-28%20124543.png)
+### 📊 **Smart Categorization**
+Automatically sorts emails into 6 intuitive categories for better inbox management
 
-### Email Detail View
-![Email detail panel with full content](Screenshot%202025-10-28%20124638.png)
+### 🔐 **Secure & Private**
+OAuth 2.0 authentication with local-only storage - your data never leaves your device
 
-### API Key Configuration
-![API key setup modal](Screenshot%202025-10-28%20130355.png)
+</td>
+<td width="50%">
 
-## 🚀 Getting Started
+### 📱 **Modern Interface**
+Beautiful, responsive UI built with Tailwind CSS for seamless experience across devices
+
+### 💾 **Lightning Fast**
+Local caching ensures quick access to your classified emails
+
+### 🔄 **Real-time Processing**
+Fetch and classify emails on demand with instant results
+
+</td>
+</tr>
+</table>
+
+---
+
+## 📬 Email Categories
+
+<div align="center">
+
+| Icon | Category | Purpose |
+|:----:|----------|---------|
+| 🔴 | **Urgent & Important** | Time-sensitive emails requiring immediate action |
+| 🟡 | **Important but Not Urgent** | Significant emails that can wait |
+| 🔵 | **Informational** | Newsletters, updates, and FYI content |
+| 🟢 | **Promotional** | Marketing and special offers |
+| ⚪ | **General** | Routine correspondence |
+| 🗑️ | **Spam/Junk** | Unwanted or suspicious content |
+
+</div>
+
+---
+
+## 📸 Screenshots
+
+<div align="center">
+
+### 🎯 Dashboard View
+*Organized email categories at a glance*
+
+![Dashboard](Screenshot%202025-10-28%20124543.png)
+
+### 📧 Email Details
+*Full content view with HTML rendering*
+
+![Email Detail](Screenshot%202025-10-28%20124638.png)
+
+### ⚙️ Configuration
+*Easy AI provider setup*
+
+![API Configuration](Screenshot%202025-10-28%20130355.png)
+
+</div>
+
+---
+
+## 🚀 Quick Start
 
 ### Prerequisites
 
-- Node.js 18+ installed
-- A Google Cloud Project with Gmail API enabled
-- OpenAI API key OR Google AI Studio API key
+```
+✅ Node.js 18 or higher
+✅ Google Cloud Project with Gmail API
+✅ OpenAI API key OR Google AI Studio API key
+```
 
 ### Installation
 
-1. **Clone the repository**
-   ```bash
-   git clone <repository-url>
-   cd email-classifier-app
-   ```
+#### 1️⃣ Clone & Install
 
-2. **Install dependencies**
-   ```bash
-   npm install
-   ```
+```bash
+git clone <repository-url>
+cd email-classifier-app
+npm install
+```
 
-3. **Set up environment variables**
-   
-   Create a `.env.local` file in the root directory:
-   ```env
-   # Google OAuth Configuration
-   GOOGLE_CLIENT_ID=your_google_client_id
-   GOOGLE_CLIENT_SECRET=your_google_client_secret
-   
-   # NextAuth Configuration
-   NEXTAUTH_URL=http://localhost:3000
-   NEXTAUTH_SECRET=your_nextauth_secret
-   
-   # AI Provider API Keys (configure at least one)
-   OPENAI_API_KEY=your_openai_api_key
-   GEMINI_API_KEY=your_gemini_api_key
-   ```
+#### 2️⃣ Configure Environment
 
-4. **Run the development server**
-   ```bash
-   npm run dev
-   ```
+Create `.env.local` in the root directory:
 
-5. **Open your browser**
-   
-   Navigate to [http://localhost:3000](http://localhost:3000)
+```env
+# 🔑 Google OAuth
+GOOGLE_CLIENT_ID=your_google_client_id
+GOOGLE_CLIENT_SECRET=your_google_client_secret
 
-## 🔧 Configuration
+# 🔐 NextAuth
+NEXTAUTH_URL=http://localhost:3000
+NEXTAUTH_SECRET=your_nextauth_secret
 
-### Google Cloud Setup
+# 🤖 AI Providers (configure at least one)
+OPENAI_API_KEY=your_openai_api_key
+GEMINI_API_KEY=your_gemini_api_key
+```
 
-1. Go to [Google Cloud Console](https://console.cloud.google.com/)
-2. Create a new project or select an existing one
-3. Enable the Gmail API
-4. Create OAuth 2.0 credentials:
-   - Application type: Web application
-   - Authorized redirect URIs: `http://localhost:3000/api/auth/callback/google`
-5. Copy the Client ID and Client Secret to your `.env.local`
+#### 3️⃣ Launch
 
-### AI Provider Setup
+```bash
+npm run dev
+```
 
-#### Option 1: OpenAI
-1. Get your API key from [OpenAI Platform](https://platform.openai.com/api-keys)
-2. Add it to `.env.local` as `OPENAI_API_KEY`
+🎉 Open [http://localhost:3000](http://localhost:3000) and start classifying!
 
-#### Option 2: Google Gemini
-1. Get your API key from [Google AI Studio](https://makersuite.google.com/app/apikey)
-2. Add it to `.env.local` as `GEMINI_API_KEY`
+---
 
-### NextAuth Secret
+## 🔧 Configuration Guide
 
-Generate a secure random string for `NEXTAUTH_SECRET`:
+<details>
+<summary><b>🌐 Google Cloud Setup</b></summary>
+
+<br>
+
+1. Navigate to [Google Cloud Console](https://console.cloud.google.com/)
+2. Create or select a project
+3. Enable **Gmail API**
+4. Create **OAuth 2.0 credentials**:
+   - Type: Web application
+   - Redirect URI: `http://localhost:3000/api/auth/callback/google`
+5. Copy credentials to `.env.local`
+
+</details>
+
+<details>
+<summary><b>🤖 AI Provider Setup</b></summary>
+
+<br>
+
+**Option A: OpenAI**
+- Get API key from [OpenAI Platform](https://platform.openai.com/api-keys)
+- Add as `OPENAI_API_KEY` in `.env.local`
+
+**Option B: Google Gemini**
+- Get API key from [Google AI Studio](https://makersuite.google.com/app/apikey)
+- Add as `GEMINI_API_KEY` in `.env.local`
+
+</details>
+
+<details>
+<summary><b>🔐 Generate NextAuth Secret</b></summary>
+
+<br>
+
 ```bash
 openssl rand -base64 32
 ```
 
-## 📖 Usage
+</details>
 
-1. **Sign In**: Click "Sign in with Google" to authenticate with your Gmail account
-2. **Configure AI Provider**: On first use, you'll be prompted to select and configure your AI provider (OpenAI or Gemini)
-3. **Fetch Emails**: Click "Fetch Emails" to retrieve your recent emails
-4. **View Classifications**: Emails are automatically classified and organized by category
-5. **View Details**: Click on any email card to see the full email content
-6. **Reclassify**: Use the "Classify Emails" button to re-run classification with updated settings
+---
+
+## 📖 How to Use
+
+**Step-by-step workflow:**
+
+1. **🔐 Sign In** → Authenticate with your Google account
+2. **⚙️ Configure AI** → Select your preferred AI provider (OpenAI or Gemini)
+3. **📥 Fetch Emails** → Retrieve recent messages from your inbox
+4. **🤖 Auto-Classify** → AI automatically categorizes your emails
+5. **📧 View & Manage** → Browse emails organized by category
+6. **🔄 Reclassify** → Update classifications anytime with new settings
+
+---
 
 ## 🏗️ Tech Stack
 
-- **Framework**: [Next.js 15+](https://nextjs.org/) (App Router)
-- **Language**: [TypeScript](https://www.typescriptlang.org/)
-- **Styling**: [Tailwind CSS](https://tailwindcss.com/)
-- **Authentication**: [NextAuth.js](https://next-auth.js.org/)
-- **AI Integration**: 
-  - [LangChain](https://js.langchain.com/)
-  - [OpenAI](https://openai.com/)
-  - [Google Gemini](https://ai.google.dev/)
-- **Email API**: [Gmail API](https://developers.google.com/gmail/api)
+<div align="center">
+
+| Category | Technologies |
+|----------|-------------|
+| **Framework** | ![Next.js](https://img.shields.io/badge/Next.js-000000?style=flat&logo=next.js&logoColor=white) ![React](https://img.shields.io/badge/React-61DAFB?style=flat&logo=react&logoColor=black) |
+| **Language** | ![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=flat&logo=typescript&logoColor=white) |
+| **Styling** | ![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=flat&logo=tailwind-css&logoColor=white) |
+| **Auth** | ![NextAuth](https://img.shields.io/badge/NextAuth.js-000000?style=flat&logo=next.js&logoColor=white) |
+| **AI** | ![OpenAI](https://img.shields.io/badge/OpenAI-412991?style=flat&logo=openai&logoColor=white) ![Google](https://img.shields.io/badge/Gemini-4285F4?style=flat&logo=google&logoColor=white) |
+| **Integration** | ![Gmail API](https://img.shields.io/badge/Gmail_API-EA4335?style=flat&logo=gmail&logoColor=white) ![LangChain](https://img.shields.io/badge/LangChain-121212?style=flat&logo=chainlink&logoColor=white) |
+
+</div>
+
+---
 
 ## 📁 Project Structure
 
 ```
 email-classifier-app/
-├── app/                          # Next.js App Router
-│   ├── api/                      # API routes
-│   │   ├── auth/                 # NextAuth authentication
-│   │   └── emails/               # Email fetching & classification
-│   ├── dashboard/                # Main dashboard page
-│   └── page.tsx                  # Landing page
-├── components/                   # React components
-│   ├── ApiKeyModal.tsx          # AI provider configuration
-│   ├── AuthButton.tsx           # Authentication button
-│   ├── CategorySection.tsx      # Email category display
-│   ├── EmailCard.tsx            # Individual email card
-│   ├── EmailDetailModal.tsx     # Email detail modal (deprecated)
-│   ├── EmailDetailPanel.tsx     # Email detail panel
-│   └── EmailList.tsx            # Email list container
-├── lib/                         # Utility functions
-│   ├── emailService.ts          # Email classification logic
-│   └── storage.ts               # Local storage utilities
-├── types/                       # TypeScript definitions
-│   └── email.ts                 # Email type definitions
-├── .kiro/                       # Kiro AI specs
-│   └── specs/
-│       └── email-classifier-app/
-│           ├── requirements.md  # Feature requirements
-│           ├── design.md        # System design
-│           └── tasks.md         # Implementation tasks
-└── public/                      # Static assets
+│
+├── 📱 app/                          Next.js App Router
+│   ├── api/                        API endpoints
+│   │   ├── auth/                   Authentication
+│   │   └── emails/                 Email operations
+│   ├── dashboard/                  Main dashboard
+│   └── page.tsx                    Landing page
+│
+├── 🧩 components/                   React components
+│   ├── ApiKeyModal.tsx            AI configuration
+│   ├── AuthButton.tsx             Auth UI
+│   ├── CategorySection.tsx        Category display
+│   ├── EmailCard.tsx              Email cards
+│   └── EmailDetailPanel.tsx       Detail view
+│
+├── 🛠️ lib/                          Utilities
+│   ├── emailService.ts            Classification logic
+│   └── storage.ts                 Local storage
+│
+├── 📝 types/                        TypeScript types
+│   └── email.ts                   Email definitions
+│
+└── 🎨 public/                       Static assets
 ```
 
-## 🎯 Email Categories
-
-The AI classifies emails into the following categories:
-
-| Category | Description | Use Case |
-|----------|-------------|----------|
-| **Urgent & Important** | Time-sensitive emails requiring immediate action | Deadlines, critical issues, urgent requests |
-| **Important but Not Urgent** | Significant emails that can be addressed later | Project updates, important announcements |
-| **Informational** | Newsletters, updates, and FYI emails | Industry news, company updates, reports |
-| **Promotional** | Marketing and promotional content | Sales, offers, advertisements |
-| **General** | Routine correspondence | General inquiries, casual communication |
-| **Spam/Junk** | Unwanted or suspicious emails | Phishing attempts, irrelevant content |
+---
 
 ## 🔒 Security & Privacy
 
-- **OAuth 2.0**: Secure authentication with Google
-- **Local Storage**: Classified emails are stored locally in your browser
-- **API Keys**: Stored securely in environment variables
-- **No Data Persistence**: Email content is not stored on any server
-- **Read-Only Access**: The app only reads emails, never modifies or deletes them
+<div align="center">
+
+| Feature | Implementation |
+|---------|---------------|
+| 🔐 **Authentication** | OAuth 2.0 with Google |
+| 💾 **Data Storage** | Local browser storage only |
+| 🔑 **API Keys** | Secure environment variables |
+| 📧 **Email Access** | Read-only permissions |
+| 🚫 **Data Persistence** | No server-side storage |
+
+</div>
+
+> **Privacy First**: Your emails are processed locally and never stored on external servers. The app only reads emails and never modifies or deletes them.
+
+---
 
 ## 🛠️ Development
 
@@ -190,49 +273,92 @@ npm run build
 npm start
 ```
 
-### Linting
+### Code Quality
 
 ```bash
+# Linting
 npm run lint
-```
 
-### Type Checking
-
-```bash
+# Type Checking
 npx tsc --noEmit
 ```
 
+---
+
 ## 🐛 Troubleshooting
 
-### "Invalid API Key" Error
-- Verify your API key is correctly set in `.env.local`
-- Ensure you've selected the correct AI provider in the settings
-- Check that your API key has sufficient credits/quota
+<details>
+<summary><b>❌ "Invalid API Key" Error</b></summary>
 
-### "Failed to Fetch Emails"
-- Confirm Gmail API is enabled in Google Cloud Console
-- Verify OAuth credentials are correct
-- Check that redirect URIs match exactly
+<br>
 
-### Classification Not Working
-- Ensure at least one AI provider API key is configured
-- Check browser console for detailed error messages
-- Verify you have sufficient API quota remaining
+- ✅ Verify API key in `.env.local`
+- ✅ Confirm correct provider selected
+- ✅ Check API quota/credits
 
-## 📝 License
+</details>
 
-This project is open source and available under the [MIT License](LICENSE).
+<details>
+<summary><b>📧 "Failed to Fetch Emails"</b></summary>
 
-## 🤝 Contributing
+<br>
 
-Contributions are welcome! Please feel free to submit a Pull Request.
+- ✅ Enable Gmail API in Google Cloud
+- ✅ Verify OAuth credentials
+- ✅ Check redirect URIs match exactly
 
-## 📧 Support
+</details>
 
-For issues and questions, please open an issue on the GitHub repository.
+<details>
+<summary><b>🤖 Classification Issues</b></summary>
+
+<br>
+
+- ✅ Ensure AI provider configured
+- ✅ Check browser console for errors
+- ✅ Verify API quota remaining
+
+</details>
 
 ---
 
-Built with ❤️ using Next.js and AI
-#   E m a i l - c l a s s i f i e r s  
- 
+## 🤝 Contributing
+
+We welcome contributions! Here's how you can help:
+
+1. 🍴 Fork the repository
+2. 🌿 Create a feature branch (`git checkout -b feature/AmazingFeature`)
+3. 💻 Commit your changes (`git commit -m 'Add AmazingFeature'`)
+4. 📤 Push to the branch (`git push origin feature/AmazingFeature`)
+5. 🎉 Open a Pull Request
+
+---
+
+## 📄 License
+
+This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) file for details.
+
+---
+
+## 💬 Support
+
+<div align="center">
+
+**Need help? Have questions?**
+
+[![Open Issue](https://img.shields.io/badge/Open-Issue-red?style=for-the-badge&logo=github)](https://github.com/yourusername/email-classifier-app/issues)
+[![Discussions](https://img.shields.io/badge/Join-Discussions-blue?style=for-the-badge&logo=github)](https://github.com/yourusername/email-classifier-app/discussions)
+
+</div>
+
+---
+
+<div align="center">
+
+### Built with ❤️ using Next.js and AI
+
+**[⭐ Star this repo](https://github.com/yourusername/email-classifier-app)** if you find it useful!
+
+*Made with 🤖 by developers, for developers*
+
+</div>
